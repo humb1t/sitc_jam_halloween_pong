@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://paddle.gd" type="Script" id=1]
 [ext_resource path="res://left_pallete.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://separator.png" type="Texture" id=6]
 [ext_resource path="res://wall.gd" type="Script" id=7]
 [ext_resource path="res://ceiling_floor.gd" type="Script" id=8]
+[ext_resource path="res://SackJo22_-_The_Haunted_Hotel.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -170,6 +171,15 @@ y_direction = -1
 [node name="collision" type="CollisionShape2D" parent="floor" index="0"]
 
 shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_entered" from="left" to="left" method="_on_area_entered"]
 
